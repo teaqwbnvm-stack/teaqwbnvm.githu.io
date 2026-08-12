@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>RBXSHOP</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -27,13 +25,14 @@ body{
 header{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
   background:#15151b;
   border-bottom:1px solid #292930;
   padding:15px 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:15px;
 }
 
 .logo{
@@ -46,6 +45,7 @@ nav{
   display:flex;
   align-items:center;
   gap:15px;
+  flex-wrap:wrap;
 }
 
 nav a{
@@ -93,12 +93,7 @@ nav a:hover{
   text-align:center;
   padding:100px 20px;
   background:
-    radial-gradient(
-      circle at center,
-      #3b0c0c,
-      #160a0a 35%,
-      #0b0b0f 70%
-    );
+    radial-gradient(circle at center,#3b0c0c,#160a0a 35%,#0b0b0f 70%);
 }
 
 .hero h1{
@@ -155,8 +150,7 @@ nav a:hover{
 
 .cards{
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
 }
 
@@ -177,23 +171,17 @@ nav a:hover{
 .product-img{
   height:130px;
   border-radius:10px;
-  background:
-  linear-gradient(
-    135deg,
-    #261010,
-    #121218
-  );
-
+  background:linear-gradient(135deg,#261010,#121218);
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:45px;
   margin-bottom:18px;
 }
 
 .card p{
   color:#999;
+  margin-top:8px;
 }
 
 .price{
@@ -213,6 +201,7 @@ nav a:hover{
 
 .account-box{
   width:390px;
+  max-width:100%;
   background:#15151c;
   border:1px solid #292930;
   border-radius:14px;
@@ -272,6 +261,7 @@ nav a:hover{
 
 .member-box{
   width:550px;
+  max-width:100%;
   background:#15151c;
   border:1px solid #292930;
   border-radius:15px;
@@ -298,19 +288,76 @@ nav a:hover{
   width:100%;
 }
 
+/* TOPUP */
+
+.topup{
+  padding:60px 20px;
+  display:none;
+  justify-content:center;
+}
+
+.topup-box{
+  width:550px;
+  max-width:100%;
+  background:#15151c;
+  border:1px solid #292930;
+  border-radius:15px;
+  padding:30px;
+}
+
+.topup-box h2{
+  margin-bottom:15px;
+}
+
+.topup-info{
+  color:#999;
+  margin-bottom:20px;
+  line-height:1.7;
+}
+
+.bank-box{
+  background:white;
+  padding:25px 15px;
+  border-radius:12px;
+  text-align:center;
+  margin:20px 0;
+}
+
+.bank-title{
+  color:#111;
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.bank-number{
+  color:#111;
+  font-size:24px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.bank-note{
+  color:#555;
+  margin-top:8px;
+}
+
+.topup-result{
+  margin-top:15px;
+  text-align:center;
+  color:#55e878;
+}
+
 /* PURCHASE CODE */
 
 .code-box{
   display:none;
   margin:30px auto;
   max-width:550px;
-
   background:#15151c;
   border:1px solid #ff3030;
-
   border-radius:15px;
   padding:30px;
-
   text-align:center;
 }
 
@@ -329,71 +376,666 @@ nav a:hover{
 .product-code{
   background:#0c0c11;
   border:1px solid #ff3030;
-
   border-radius:8px;
   padding:18px;
-
   font-size:28px;
   font-weight:bold;
-
   letter-spacing:2px;
-
   color:#55e878;
-
   word-break:break-all;
   user-select:text;
 }
 
 .copy-btn{
   margin-top:15px;
-
   width:100%;
-
   padding:12px;
-
   background:#ff3030;
   color:white;
-
   border:0;
   border-radius:7px;
-
   font-weight:bold;
-
   cursor:pointer;
 }
 
-/* TOPUP */
+/* FOOTER */
 
-.topup{
-  padding:60px 20px;
-  display:none;
-  justify-content:center;
-}
-
-.topup-box{
-  width:550px;
-  background:#15151c;
-  border:1px solid #292930;
-  border-radius:15px;
-  padding:30px;
-}
-
-.topup-info{
-  color:#999;
-  margin-bottom:20px;
-}
-
-.bank-box{
-  background:white;
-  padding:25px 15px;
-  border-radius:12px;
+footer{
   text-align:center;
-  margin:20px 0;
+  padding:30px 20px;
+  border-top:1px solid #292930;
+  color:#777;
+  margin-top:40px;
 }
 
-.bank-title{
-  color:#111;
-  font-size:18px;
-  font-weigh
+/* MOBILE */
+
+@media(max-width:600px){
+  header{
+    padding:14px 4%;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  nav{
+    gap:8px;
+    font-size:14px;
+  }
+
+  .user-box{
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RBXSHOP</div>
+
+  <nav>
+    <a href="#home">หน้าหลัก</a>
+    <a href="#products">สินค้า</a>
+
+    <a href="#account"
+       id="loginLink"
+       class="login-btn">
+       เข้าสู่ระบบ
+    </a>
+
+    <div class="user-box" id="userBox">
+      <span class="points">
+        💰 <span id="pointsText">0</span> พอยต์
+      </span>
+
+      <button class="logout" onclick="logout()">
+        ออกจากระบบ
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero" id="home">
+  <h1>ยินดีต้อนรับสู่ <span>RBXSHOP</span></h1>
+  <p>ร้านค้าออนไลน์สำหรับสินค้าเกม</p>
+
+  <a href="#products" class="main-btn">
+    ดูสินค้า
+  </a>
+</section>
+
+
+<section class="products" id="products">
+
+  <h2>สินค้า</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="product-img">🎮</div>
+      <h3>สินค้า 1</h3>
+      <p>สินค้าดิจิทัลราคาพิเศษ</p>
+      <div class="price">50 พอยต์</div>
+
+      <button
+        class="buy-btn"
+        onclick="buyProduct('สินค้า 1',50)">
+        ซื้อสินค้า
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="product-img">🔥</div>
+      <h3>สินค้า 2</h3>
+      <p>สินค้าดิจิทัลคุณภาพ</p>
+      <div class="price">100 พอยต์</div>
+
+      <button
+        class="buy-btn"
+        onclick="buyProduct('สินค้า 2',100)">
+        ซื้อสินค้า
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="product-img">⭐</div>
+      <h3>สินค้า 3</h3>
+      <p>สินค้าดิจิทัลพิเศษ</p>
+      <div class="price">200 พอยต์</div>
+
+      <button
+        class="buy-btn"
+        onclick="buyProduct('สินค้า 3',200)">
+        ซื้อสินค้า
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="account" id="account">
+
+  <div class="account-box">
+
+    <h2 id="accountTitle">เข้าสู่ระบบ</h2>
+
+    <input
+      class="input"
+      id="username"
+      type="text"
+      placeholder="ชื่อผู้ใช้">
+
+    <input
+      class="input"
+      id="password"
+      type="password"
+      placeholder="รหัสผ่าน">
+
+    <button
+      class="account-btn"
+      onclick="submitAccount()">
+      <span id="submitText">เข้าสู่ระบบ</span>
+    </button>
+
+    <div class="switch">
+      <span id="switchText">ยังไม่มีบัญชี?</span>
+
+      <button onclick="switchMode()">
+        <span id="switchButton">สมัครสมาชิก</span>
+      </button>
+    </div>
+
+    <div class="message" id="accountMessage"></div>
+
+  </div>
+
+</section>
+
+
+<section class="member" id="member">
+
+  <div class="member-box">
+
+    <h2>👤 สมาชิก</h2>
+
+    <div class="member-card">
+      ชื่อผู้ใช้:
+      <strong id="memberUsername">-</strong>
+    </div>
+
+    <div class="member-card">
+      ยอดพอยต์:
+      <strong>
+        <span id="memberPoints">0</span>
+        พอยต์
+      </strong>
+    </div>
+
+    <button
+      class="member-btn"
+      onclick="showTopup()">
+      เติมพอยต์
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="topup" id="topup">
+
+  <div class="topup-box">
+
+    <h2>💰 เติมพอยต์</h2>
+
+    <p class="topup-info">
+      หน้านี้เป็นตัวอย่างระบบเติมเงิน
+      กรุณาตั้งค่าระบบชำระเงินจริงและระบบตรวจสอบสลิป
+      บนเซิร์ฟเวอร์ก่อนใช้งานจริง
+    </p>
+
+    <div class="bank-box">
+
+      <div class="bank-title">
+        บัญชีร้านค้า
+      </div>
+
+      <div class="bank-number">
+        XXXX-X-XXXXX-X
+      </div>
+
+      <div class="bank-note">
+        กรุณาใช้ข้อมูลบัญชีจริงของร้านค้า
+      </div>
+
+    </div>
+
+    <input
+      class="input"
+      id="topupAmount"
+      type="number"
+      min="1"
+      placeholder="จำนวนเงินที่เติม">
+
+    <button
+      class="topup-btn"
+      onclick="demoTopup()">
+      เติมพอยต์แบบทดลอง
+    </button>
+
+    <div
+      class="topup-result"
+      id="topupResult">
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="code-box" id="codeBox">
+
+  <h2>ซื้อสินค้าสำเร็จ 🎉</h2>
+
+  <div class="product-name" id="codeProduct">
+    -
+  </div>
+
+  <div class="product-code" id="productCode">
+    -
+  </div>
+
+  <button
+    class="copy-btn"
+    onclick="copyCode()">
+    คัดลอกโค้ด
+  </button>
+
+</div>
+
+
+<footer>
+  © 2026 RBXSHOP — All Rights Reserved
+</footer>
+
+
+<script>
+
+let registerMode = false;
+
+let currentUser =
+  localStorage.getItem("rbx_current_user");
+
+function getUsers(){
+
+  return JSON.parse(
+    localStorage.getItem("rbx_users") || "{}"
+  );
+
+}
+
+function saveUsers(users){
+
+  localStorage.setItem(
+    "rbx_users",
+    JSON.stringify(users)
+  );
+
+}
+
+
+function switchMode(){
+
+  registerMode = !registerMode;
+
+  const title =
+    document.getElementById("accountTitle");
+
+  const submit =
+    document.getElementById("submitText");
+
+  const switchText =
+    document.getElementById("switchText");
+
+  const switchButton =
+    document.getElementById("switchButton");
+
+  const message =
+    document.getElementById("accountMessage");
+
+  message.textContent = "";
+
+  if(registerMode){
+
+    title.textContent = "สมัครสมาชิก";
+    submit.textContent = "สมัครสมาชิก";
+    switchText.textContent = "มีบัญชีอยู่แล้ว?";
+    switchButton.textContent = "เข้าสู่ระบบ";
+
+  }else{
+
+    title.textContent = "เข้าสู่ระบบ";
+    submit.textContent = "เข้าสู่ระบบ";
+    switchText.textContent = "ยังไม่มีบัญชี?";
+    switchButton.textContent = "สมัครสมาชิก";
+
+  }
+
+}
+
+
+function submitAccount(){
+
+  const username =
+    document.getElementById("username").value.trim();
+
+  const password =
+    document.getElementById("password").value;
+
+  const message =
+    document.getElementById("accountMessage");
+
+  if(!username || !password){
+
+    message.style.color = "#ff5555";
+    message.textContent =
+      "กรุณากรอกชื่อผู้ใช้และรหัสผ่าน";
+
+    return;
+  }
+
+  const users = getUsers();
+
+  if(registerMode){
+
+    if(users[username]){
+
+      message.style.color = "#ff5555";
+      message.textContent =
+        "ชื่อผู้ใช้นี้มีอยู่แล้ว";
+
+      return;
+    }
+
+    users[username] = {
+      password:password,
+      points:0
+    };
+
+    saveUsers(users);
+
+    message.style.color = "#55e878";
+    message.textContent =
+      "สมัครสมาชิกสำเร็จ! กรุณาเข้าสู่ระบบ";
+
+    switchMode();
+
+  }else{
+
+    if(!users[username] ||
+       users[username].password !== password){
+
+      message.style.color = "#ff5555";
+      message.textContent =
+        "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+
+      return;
+    }
+
+    currentUser = username;
+
+    localStorage.setItem(
+      "rbx_current_user",
+      username
+    );
+
+    message.style.color = "#55e878";
+    message.textContent =
+      "เข้าสู่ระบบสำเร็จ";
+
+    updateUI();
+
+  }
+
+}
+
+
+function logout(){
+
+  currentUser = null;
+
+  localStorage.removeItem(
+    "rbx_current_user"
+  );
+
+  updateUI();
+
+  window.location.hash = "home";
+
+}
+
+
+function updateUI(){
+
+  const loginLink =
+    document.getElementById("loginLink");
+
+  const userBox =
+    document.getElementById("userBox");
+
+  const account =
+    document.getElementById("account");
+
+  const member =
+    document.getElementById("member");
+
+  if(currentUser){
+
+    const users = getUsers();
+
+    const user = users[currentUser];
+
+    loginLink.style.display = "none";
+    userBox.style.display = "flex";
+
+    account.style.display = "none";
+
+    member.style.display = "flex";
+
+    document.getElementById(
+      "memberUsername"
+    ).textContent = currentUser;
+
+    document.getElementById(
+      "memberPoints"
+    ).textContent = user.points;
+
+    document.getElementById(
+      "pointsText"
+    ).textContent = user.points;
+
+  }else{
+
+    loginLink.style.display = "block";
+    userBox.style.display = "none";
+
+    account.style.display = "flex";
+    member.style.display = "none";
+
+  }
+
+}
+
+
+function showTopup(){
+
+  document.getElementById(
+    "topup"
+  ).style.display = "flex";
+
+  document.getElementById(
+    "topup"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+function demoTopup(){
+
+  if(!currentUser){
+
+    alert("กรุณาเข้าสู่ระบบก่อน");
+    return;
+
+  }
+
+  const amount =
+    Number(
+      document.getElementById(
+        "topupAmount"
+      ).value
+    );
+
+  if(!amount || amount <= 0){
+
+    alert("กรุณาใส่จำนวนเงิน");
+    return;
+
+  }
+
+  const users = getUsers();
+
+  /*
+    ระบบทดลอง:
+    1 บาท = 1 พอยต์
+
+    ยังไม่มีการรับเงินจริง
+  */
+
+  users[currentUser].points += amount;
+
+  saveUsers(users);
+
+  updateUI();
+
+  document.getElementById(
+    "topupResult"
+  ).textContent =
+    "เติมพอยต์แบบทดลองสำเร็จ +" +
+    amount +
+    " พอยต์";
+
+  document.getElementById(
+    "topupAmount"
+  ).value = "";
+
+}
+
+
+function buyProduct(name,price){
+
+  if(!currentUser){
+
+    alert("กรุณาเข้าสู่ระบบก่อนซื้อสินค้า");
+    document.getElementById(
+      "account"
+    ).scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+
+  }
+
+  const users = getUsers();
+
+  if(users[currentUser].points < price){
+
+    alert(
+      "พอยต์ไม่เพียงพอ ต้องใช้ " +
+      price +
+      " พอยต์"
+    );
+
+    return;
+
+  }
+
+  users[currentUser].points -= price;
+
+  saveUsers(users);
+
+  updateUI();
+
+  const code =
+    "RBX-" +
+    Math.random()
+      .toString(36)
+      .substring(2,8)
+      .toUpperCase() +
+    "-" +
+    Math.random()
+      .toString(36)
+      .substring(2,8)
+      .toUpperCase();
+
+  document.getElementById(
+    "codeProduct"
+  ).textContent = name;
+
+  document.getElementById(
+    "productCode"
+  ).textContent = code;
+
+  document.getElementById(
+    "codeBox"
+  ).style.display = "block";
+
+  document.getElementById(
+    "codeBox"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+function copyCode(){
+
+  const code =
+    document.getElementById(
+      "productCode"
+    ).textContent;
+
+  navigator.clipboard.writeText(code)
+    .then(function(){
+
+      alert("คัดลอกโค้ดแล้ว");
+
+    })
+    .catch(function(){
+
+      alert("ไม่สามารถคัดลอกอัตโนมัติได้");
+
+    });
+
+}
+
+
+updateUI();
+
+</script>
+
+</body>
+</html>
 เขียนข้อความ
-เขียนถึง Tae Hub
