@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RBXSHOP</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0b0b0f;
+  color:white;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#15151b;
+  border-bottom:1px solid #292930;
+  padding:15px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#ff3030;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#ff3030;
+}
+
+.login-btn{
+  border:1px solid #ff3030;
+  padding:9px 14px;
+  border-radius:7px;
+}
+
+.user-box{
+  display:none;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.points{
+  background:#241313;
+  border:1px solid #ff3030;
+  padding:8px 12px;
+  border-radius:7px;
+  color:#ff7777;
+  font-weight:bold;
+}
+
+.logout{
+  background:#333;
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.hero{
+  text-align:center;
+  padding:100px 20px;
+  background:
+    radial-gradient(
+      circle at center,
+      #3b0c0c,
+      #160a0a 35%,
+      #0b0b0f 70%
+    );
+}
+
+.hero h1{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.hero h1 span{
+  color:#ff3030;
+}
+
+.hero p{
+  color:#aaa;
+  margin-bottom:30px;
+}
+
+.main-btn,
+.buy-btn,
+.account-btn,
+.member-btn,
+.topup-btn{
+  background:#ff3030;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:12px 25px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.main-btn{
+  display:inline-block;
+  text-decoration:none;
+}
+
+.main-btn:hover,
+.buy-btn:hover,
+.account-btn:hover,
+.member-btn:hover,
+.topup-btn:hover{
+  background:#e52222;
+}
+
+/* PRODUCTS */
+
+.products{
+  padding:60px 7%;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.card{
+  background:#15151c;
+  border:1px solid #292930;
+  border-radius:14px;
+  padding:25px;
+  text-align:center;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#ff3030;
+}
+
+.product-img{
+  height:130px;
+  border-radius:10px;
+  background:
+  linear-gradient(
+    135deg,
+    #261010,
+    #121218
+  );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:45px;
+  margin-bottom:18px;
+}
+
+.card p{
+  color:#999;
+}
+
+.price{
+  color:#ff4545;
+  font-size:23px;
+  font-weight:bold;
+  margin:16px 0;
+}
+
+/* ACCOUNT */
+
+.account{
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.account-box{
+  width:390px;
+  background:#15151c;
+  border:1px solid #292930;
+  border-radius:14px;
+  padding:30px;
+}
+
+.account-box h2{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.input{
+  width:100%;
+  padding:13px;
+  margin-bottom:12px;
+  border:1px solid #33333d;
+  border-radius:7px;
+  background:#0c0c11;
+  color:white;
+  outline:none;
+}
+
+.input:focus{
+  border-color:#ff3030;
+}
+
+.account-btn{
+  width:100%;
+}
+
+.switch{
+  text-align:center;
+  margin-top:17px;
+  color:#999;
+}
+
+.switch button{
+  background:none;
+  border:0;
+  color:#ff4040;
+  cursor:pointer;
+}
+
+.message{
+  text-align:center;
+  margin-top:15px;
+  color:#55e878;
+}
+
+/* MEMBER */
+
+.member{
+  padding:60px 20px;
+  display:none;
+  justify-content:center;
+}
+
+.member-box{
+  width:550px;
+  background:#15151c;
+  border:1px solid #292930;
+  border-radius:15px;
+  padding:30px;
+}
+
+.member-box h2{
+  margin-bottom:20px;
+}
+
+.member-card{
+  background:#0c0c11;
+  border:1px solid #292930;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.member-card strong{
+  color:#ff4545;
+}
+
+.member-btn{
+  width:100%;
+}
+
+/* PURCHASE CODE */
+
+.code-box{
+  display:none;
+  margin:30px auto;
+  max-width:550px;
+
+  background:#15151c;
+  border:1px solid #ff3030;
+
+  border-radius:15px;
+  padding:30px;
+
+  text-align:center;
+}
+
+.code-box h2{
+  color:#55e878;
+  margin-bottom:15px;
+}
+
+.product-name{
+  color:#ff4545;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.product-code{
+  background:#0c0c11;
+  border:1px solid #ff3030;
+
+  border-radius:8px;
+  padding:18px;
+
+  font-size:28px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  color:#55e878;
+
+  word-break:break-all;
+  user-select:text;
+}
+
+.copy-btn{
+  margin-top:15px;
+
+  width:100%;
+
+  padding:12px;
+
+  background:#ff3030;
+  color:white;
+
+  border:0;
+  border-radius:7px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+/* TOPUP */
+
+.topup{
+  padding:60px 20px;
+  display:none;
+  justify-content:center;
+}
+
+.topup-box{
+  width:550px;
+  background:#15151c;
+  border:1px solid #292930;
+  border-radius:15px;
+  padding:30px;
+}
+
+.topup-info{
+  color:#999;
+  margin-bottom:20px;
+}
+
+.bank-box{
+  background:white;
+  padding:25px 15px;
+  border-radius:12px;
+  text-align:center;
+  margin:20px 0;
+}
+
+.bank-title{
+  color:#111;
+  font-size:18px;
+  font-weigh
+เขียนข้อความ
+เขียนถึง Tae Hub
