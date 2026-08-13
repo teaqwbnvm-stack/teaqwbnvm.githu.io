@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
@@ -239,36 +239,6 @@ h2{
   margin-bottom:20px;
 }
 
-.admin-product{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.admin-product .wide{
-  grid-column:1/-1;
-}
-
-.table-wrap{
-  overflow-x:auto;
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:550px;
-}
-
-th,td{
-  padding:10px;
-  border-bottom:1px solid #292930;
-  text-align:left;
-}
-
-th{
-  color:#ff4545;
-}
-
 .qty{
   width:90px;
   padding:8px;
@@ -301,6 +271,7 @@ footer{
 }
 
 @media(max-width:600px){
+
   .hero h1{
     font-size:35px;
   }
@@ -311,10 +282,6 @@ footer{
 
   nav{
     font-size:13px;
-  }
-
-  .admin-product{
-    grid-template-columns:1fr;
   }
 }
 </style>
@@ -327,7 +294,9 @@ footer{
   <div class="logo">RBXSHOP</div>
 
   <nav>
+
     <a href="#home">หน้าหลัก</a>
+
     <a href="#products">สินค้า</a>
 
     <a id="loginLink" href="#account">
@@ -335,6 +304,7 @@ footer{
     </a>
 
     <div id="userBox" class="user">
+
       <span class="badge">
         💰 <span id="pointsTop">0</span> พอยต์
       </span>
@@ -342,7 +312,9 @@ footer{
       <button class="btn gray" onclick="logout()">
         ออกจากระบบ
       </button>
+
     </div>
+
   </nav>
 
 </header>
@@ -354,7 +326,9 @@ footer{
     ยินดีต้อนรับสู่ <span>RBXSHOP</span>
   </h1>
 
-  <p>ร้านค้าสินค้าดิจิทัล</p>
+  <p>
+    ร้านค้าสินค้าดิจิทัล
+  </p>
 
   <a class="btn" href="#products">
     ดูสินค้า
@@ -404,7 +378,7 @@ footer{
       id="confirmPassword"
       class="input"
       type="password"
-      placeholder="ยืนยันรหัสผ่านอีกครั้ง"
+      placeholder="ยืนยันรหัสผ่าน"
       style="display:none">
 
     <button
@@ -417,10 +391,7 @@ footer{
 
     </button>
 
-    <p
-      id="accountMsg"
-      class="msg">
-    </p>
+    <p id="accountMsg" class="msg"></p>
 
     <p style="text-align:center;margin-top:15px;color:#999">
 
@@ -464,11 +435,15 @@ footer{
     </div>
 
     <div class="member-card">
+
       พอยต์:
+
       <strong class="points">
         <span id="memberPoints">0</span>
       </strong>
+
     </div>
+
 
     <div class="member-card">
 
@@ -497,6 +472,7 @@ footer{
 
     </div>
 
+
     <div class="member-card">
 
       <h3>📜 ประวัติการซื้อ</h3>
@@ -519,6 +495,7 @@ footer{
     <h2 class="admin-title">
       🔐 ระบบหลังบ้านแอดมิน
     </h2>
+
 
     <div class="admin-card">
 
@@ -689,6 +666,52 @@ function saveTopups(data){
 
 
 /* =========================================
+   สร้างสินค้าเริ่มต้น
+========================================= */
+
+function createDefaultProducts(){
+
+  const products = getProducts();
+
+  // ถ้ามีสินค้าอยู่แล้ว ไม่สร้างซ้ำ
+  if(products.length > 0){
+    return;
+  }
+
+  const defaultProducts = [
+
+    {
+      id: Date.now(),
+      name: "Robux 80",
+      code: "RBX80",
+      price: 50,
+      stock: 10
+    },
+
+    {
+      id: Date.now() + 1,
+      name: "Robux 170",
+      code: "RBX170",
+      price: 100,
+      stock: 10
+    },
+
+    {
+      id: Date.now() + 2,
+      name: "Robux 400",
+      code: "RBX400",
+      price: 200,
+      stock: 10
+    }
+
+  ];
+
+  saveProducts(defaultProducts);
+
+}
+
+
+/* =========================================
    SWITCH ACCOUNT
 ========================================= */
 
@@ -749,41 +772,49 @@ function submitAccount(){
 
       msg.className = "msg red";
       msg.textContent = "กรุณากรอกข้อมูลให้ครบ";
-      return;
 
+      return;
     }
+
 
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
 
       msg.className = "msg red";
       msg.textContent = "อีเมลไม่ถูกต้อง";
-      return;
 
+      return;
     }
+
 
     if(password.length < 6){
 
       msg.className = "msg red";
-      msg.textContent = "รหัสผ่านต้องมีอย่างน้อย 6 ตัว";
-      return;
+      msg.textContent =
+        "รหัสผ่านต้องมีอย่างน้อย 6 ตัว";
 
+      return;
     }
+
 
     if(password !== confirm){
 
       msg.className = "msg red";
-      msg.textContent = "รหัสผ่านทั้งสองช่องไม่ตรงกัน";
-      return;
+      msg.textContent =
+        "รหัสผ่านทั้งสองช่องไม่ตรงกัน";
 
+      return;
     }
+
 
     if(users[username]){
 
       msg.className = "msg red";
-      msg.textContent = "ชื่อผู้ใช้นี้มีอยู่แล้ว";
-      return;
+      msg.textContent =
+        "ชื่อผู้ใช้นี้มีอยู่แล้ว";
 
+      return;
     }
+
 
     for(const name in users){
 
@@ -794,30 +825,33 @@ function submitAccount(){
       ){
 
         msg.className = "msg red";
-        msg.textContent = "อีเมลนี้ถูกใช้แล้ว";
-        return;
+        msg.textContent =
+          "อีเมลนี้ถูกใช้แล้ว";
 
+        return;
       }
 
     }
 
+
     users[username] = {
 
-      email:email,
-
-      password:password,
-
-      points:0,
-
-      history:[]
+      email: email,
+      password: password,
+      points: 0,
+      history: []
 
     };
 
+
     saveUsers(users);
 
+
     msg.className = "msg green";
+
     msg.textContent =
       "สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ";
+
 
     document.getElementById("username").value = "";
     document.getElementById("email").value = "";
@@ -834,11 +868,11 @@ function submitAccount(){
   if(!username || !password){
 
     msg.className = "msg red";
+
     msg.textContent =
       "กรุณากรอกชื่อผู้ใช้และรหัสผ่าน";
 
     return;
-
   }
 
 
@@ -848,11 +882,11 @@ function submitAccount(){
   ){
 
     msg.className = "msg red";
+
     msg.textContent =
       "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
 
     return;
-
   }
 
 
@@ -874,13 +908,11 @@ function submitAccount(){
 
 function adminLogin(){
 
-  const name =
-    prompt("ชื่อแอดมิน");
+  const name = prompt("ชื่อแอดมิน");
 
   if(name === null) return;
 
-  const password =
-    prompt("รหัสผ่านแอดมิน");
+  const password = prompt("รหัสผ่านแอดมิน");
 
   if(password === null) return;
 
@@ -955,24 +987,6 @@ function logout(){
 
 
 /* =========================================
-   ADMIN LOGOUT
-========================================= */
-
-function adminLogout(){
-
-  adminLogged = false;
-
-  localStorage.removeItem(
-    "rbx_admin_logged"
-  );
-
-  document.getElementById("admin").style.display =
-    "none";
-
-}
-
-
-/* =========================================
    PRODUCTS
 ========================================= */
 
@@ -988,13 +1002,13 @@ function renderProducts(){
 
   if(products.length === 0){
 
-    list.innerHTML =
-      `<p style="color:#777;text-align:center">
+    list.innerHTML = `
+      <p style="color:#777;text-align:center">
         ยังไม่มีสินค้า
-      </p>`;
+      </p>
+    `;
 
     return;
-
   }
 
 
@@ -1002,13 +1016,18 @@ function renderProducts(){
 
     const empty = p.stock <= 0;
 
+
     list.innerHTML += `
 
       <div class="card">
 
-        <div class="img">🎮</div>
+        <div class="img">
+          🎮
+        </div>
 
-        <h3>${escapeHTML(p.name)}</h3>
+        <h3>
+          ${escapeHTML(p.name)}
+        </h3>
 
         <p>
           รหัสสินค้า:
@@ -1020,16 +1039,20 @@ function renderProducts(){
         </div>
 
         <div class="stock ${empty ? "empty" : ""}">
+
           ${
             empty
             ? "❌ สินค้าหมด"
             : "📦 เหลือ " + p.stock + " ชิ้น"
           }
+
         </div>
+
 
         ${
           empty
           ? ""
+
           : `
 
           <input
@@ -1068,7 +1091,9 @@ function buyProduct(index){
 
   if(!currentUser){
 
-    alert("กรุณาเข้าสู่ระบบก่อนซื้อสินค้า");
+    alert(
+      "กรุณาเข้าสู่ระบบก่อนซื้อสินค้า"
+    );
 
     document.getElementById("account")
       .scrollIntoView({
@@ -1076,7 +1101,6 @@ function buyProduct(index){
       });
 
     return;
-
   }
 
 
@@ -1092,22 +1116,24 @@ function buyProduct(index){
   if(!product){
 
     alert("ไม่พบสินค้า");
-    return;
 
+    return;
   }
 
 
   const qty =
     Number(
-      document.getElementById("qty-"+index).value
+      document.getElementById(
+        "qty-"+index
+      ).value
     );
 
 
   if(!qty || qty < 1){
 
     alert("จำนวนไม่ถูกต้อง");
-    return;
 
+    return;
   }
 
 
@@ -1120,7 +1146,6 @@ function buyProduct(index){
     );
 
     return;
-
   }
 
 
@@ -1137,7 +1162,6 @@ function buyProduct(index){
     );
 
     return;
-
   }
 
 
@@ -1157,12 +1181,14 @@ function buyProduct(index){
   for(let i=0;i<qty;i++){
 
     codes.push(
+
       product.code +
       "-" +
       Math.random()
         .toString(36)
         .substring(2,8)
         .toUpperCase()
+
     );
 
   }
@@ -1170,28 +1196,31 @@ function buyProduct(index){
 
   const order = {
 
-    id:orderID,
+    id: orderID,
 
-    username:currentUser,
+    username: currentUser,
 
-    productName:product.name,
+    productName: product.name,
 
-    productCode:product.code,
+    productCode: product.code,
 
-    quantity:qty,
+    quantity: qty,
 
-    total:total,
+    total: total,
 
-    codes:codes,
+    codes: codes,
 
-    date:new Date().toLocaleString("th-TH")
+    date: new Date().toLocaleString("th-TH")
 
   };
 
 
   if(!user.history){
+
     user.history = [];
+
   }
+
 
   user.history.unshift(order);
 
@@ -1202,6 +1231,7 @@ function buyProduct(index){
 
 
   saveUsers(users);
+
   saveProducts(products);
 
 
@@ -1216,13 +1246,14 @@ function buyProduct(index){
 
 
   renderProducts();
+
   updateUI();
 
 }
 
 
 /* =========================================
-   TOPUP REQUEST
+   TOPUP
 ========================================= */
 
 function requestTopup(){
@@ -1230,27 +1261,31 @@ function requestTopup(){
   if(!currentUser){
 
     alert("กรุณาเข้าสู่ระบบ");
-    return;
 
+    return;
   }
 
 
   const amount =
     Number(
-      document.getElementById("topupAmount").value
+      document.getElementById(
+        "topupAmount"
+      ).value
     );
 
 
   if(!amount || amount <= 0){
 
-    document.getElementById("topupMsg").className =
-      "msg red";
+    document.getElementById(
+      "topupMsg"
+    ).className = "msg red";
 
-    document.getElementById("topupMsg").textContent =
+    document.getElementById(
+      "topupMsg"
+    ).textContent =
       "กรุณากรอกจำนวนเงิน";
 
     return;
-
   }
 
 
@@ -1259,15 +1294,21 @@ function requestTopup(){
 
   topups.unshift({
 
-    id:"TOP-"+Date.now(),
+    id:
+      "TOP-" +
+      Date.now(),
 
-    username:currentUser,
+    username:
+      currentUser,
 
-    amount:amount,
+    amount:
+      amount,
 
-    status:"รอตรวจสอบ",
+    status:
+      "รอตรวจสอบ",
 
-    date:new Date().toLocaleString("th-TH")
+    date:
+      new Date().toLocaleString("th-TH")
 
   });
 
@@ -1275,13 +1316,19 @@ function requestTopup(){
   saveTopups(topups);
 
 
-  document.getElementById("topupAmount").value = "";
+  document.getElementById(
+    "topupAmount"
+  ).value = "";
 
 
-  document.getElementById("topupMsg").className =
-    "msg green";
+  document.getElementById(
+    "topupMsg"
+  ).className = "msg green";
 
-  document.getElementById("topupMsg").textContent =
+
+  document.getElementById(
+    "topupMsg"
+  ).textContent =
     "ส่งรายการแล้ว รอแอดมินตรวจสอบ";
 
 
@@ -1291,7 +1338,7 @@ function requestTopup(){
 
 
 /* =========================================
-   ADMIN ADD PRODUCT
+   ADD PRODUCT
 ========================================= */
 
 function addProduct(){
@@ -1299,72 +1346,95 @@ function addProduct(){
   if(!adminLogged){
 
     alert("ไม่มีสิทธิ์");
-    return;
 
+    return;
   }
 
 
   const name =
-    document.getElementById("newName").value.trim();
+    document.getElementById(
+      "newName"
+    ).value.trim();
+
 
   const code =
-    document.getElementById("newCode").value.trim();
+    document.getElementById(
+      "newCode"
+    ).value.trim();
+
 
   const price =
     Number(
-      document.getElementById("newPrice").value
+      document.getElementById(
+        "newPrice"
+      ).value
     );
+
 
   const stock =
     Number(
-      document.getElementById("newStock").value
+      document.getElementById(
+        "newStock"
+      ).value
     );
 
 
   const msg =
-    document.getElementById("adminMsg");
+    document.getElementById(
+      "adminMsg"
+    );
 
 
-  if(!name || !code || !price || !stock){
+  if(!name || !code || price <= 0 || stock <= 0){
 
-    msg.className = "msg red";
+    msg.className =
+      "msg red";
+
     msg.textContent =
-      "ต้องกรอกชื่อ รหัส ราคา และสต๊อก";
+      "ต้องกรอกชื่อ รหัส ราคา และสต๊อกให้ถูกต้อง";
 
     return;
-
   }
 
 
-  const products = getProducts();
+  const products =
+    getProducts();
 
 
   if(
     products.some(
-      p => p.code.toLowerCase() === code.toLowerCase()
+      p =>
+      p.code.toLowerCase() ===
+      code.toLowerCase()
     )
   ){
 
-    msg.className = "msg red";
+    msg.className =
+      "msg red";
+
     msg.textContent =
       "รหัสสินค้านี้มีอยู่แล้ว";
 
     return;
-
   }
 
 
   products.push({
 
-    id:Date.now(),
+    id:
+      Date.now(),
 
-    name:name,
+    name:
+      name,
 
-    code:code,
+    code:
+      code,
 
-    price:price,
+    price:
+      price,
 
-    stock:stock
+    stock:
+      stock
 
   });
 
@@ -1372,25 +1442,39 @@ function addProduct(){
   saveProducts(products);
 
 
-  document.getElementById("newName").value = "";
-  document.getElementById("newCode").value = "";
-  document.getElementById("newPrice").value = "";
-  document.getElementById("newStock").value = "";
+  document.getElementById(
+    "newName"
+  ).value = "";
+
+  document.getElementById(
+    "newCode"
+  ).value = "";
+
+  document.getElementById(
+    "newPrice"
+  ).value = "";
+
+  document.getElementById(
+    "newStock"
+  ).value = "";
 
 
-  msg.className = "msg green";
+  msg.className =
+    "msg green";
+
   msg.textContent =
     "เพิ่มสินค้าเข้าสต๊อกแล้ว";
 
 
   renderProducts();
+
   renderAdmin();
 
 }
 
 
 /* =========================================
-   ADMIN STOCK
+   STOCK
 ========================================= */
 
 function changeStock(index,amount){
@@ -1398,12 +1482,15 @@ function changeStock(index,amount){
   if(!adminLogged) return;
 
 
-  const products = getProducts();
+  const products =
+    getProducts();
+
 
   if(!products[index]) return;
 
 
-  products[index].stock += Number(amount);
+  products[index].stock +=
+    Number(amount);
 
 
   if(products[index].stock < 0){
@@ -1416,6 +1503,7 @@ function changeStock(index,amount){
   saveProducts(products);
 
   renderProducts();
+
   renderAdmin();
 
 }
@@ -1426,26 +1514,36 @@ function deleteProduct(index){
   if(!adminLogged) return;
 
 
-  if(!confirm("ต้องการลบสินค้านี้หรือไม่?")){
+  if(
+    !confirm(
+      "ต้องการลบสินค้านี้หรือไม่?"
+    )
+  ){
+
     return;
+
   }
 
 
-  const products = getProducts();
+  const products =
+    getProducts();
+
 
   products.splice(index,1);
+
 
   saveProducts(products);
 
 
   renderProducts();
+
   renderAdmin();
 
 }
 
 
 /* =========================================
-   ADMIN TOPUP
+   APPROVE TOPUP
 ========================================= */
 
 function approveTopup(index){
@@ -1453,49 +1551,57 @@ function approveTopup(index){
   if(!adminLogged) return;
 
 
-  const topups = getTopups();
+  const topups =
+    getTopups();
 
-  const item = topups[index];
+
+  const item =
+    topups[index];
 
 
-  if(!item || item.status !== "รอตรวจสอบ"){
+  if(
+    !item ||
+    item.status !== "รอตรวจสอบ"
+  ){
+
     return;
+
   }
 
 
-  const users = getUsers();
+  const users =
+    getUsers();
 
 
   if(!users[item.username]){
 
     alert("ไม่พบสมาชิก");
+
     return;
 
   }
 
-
-  /*
-    หมายเหตุ:
-    ปุ่มนี้เป็นการอนุมัติโดยแอดมินเอง
-    ไม่ใช่การตรวจธนาคารอัตโนมัติ
-  */
 
   users[item.username].points =
     (users[item.username].points || 0)
     + item.amount;
 
 
-  item.status = "อนุมัติ";
+  item.status =
+    "อนุมัติ";
+
 
   item.approvedAt =
     new Date().toLocaleString("th-TH");
 
 
   saveUsers(users);
+
   saveTopups(topups);
 
 
   renderAdmin();
+
   updateUI();
 
 }
@@ -1506,12 +1612,15 @@ function rejectTopup(index){
   if(!adminLogged) return;
 
 
-  const topups = getTopups();
+  const topups =
+    getTopups();
+
 
   if(!topups[index]) return;
 
 
-  topups[index].status = "ปฏิเสธ";
+  topups[index].status =
+    "ปฏิเสธ";
 
 
   saveTopups(topups);
@@ -1530,7 +1639,8 @@ function renderAdmin(){
   if(!adminLogged) return;
 
 
-  const products = getProducts();
+  const products =
+    getProducts();
 
 
   let html = "";
@@ -1596,29 +1706,36 @@ function renderAdmin(){
   });
 
 
-  document.getElementById("adminProducts").innerHTML =
+  document.getElementById(
+    "adminProducts"
+  ).innerHTML =
     html || "ยังไม่มีสินค้า";
 
 
   renderTopups();
+
   renderAdminHistory();
 
 }
 
 
 /* =========================================
-   TOPUP LIST
+   TOPUPS
 ========================================= */
 
 function renderTopups(){
 
   const list =
-    document.getElementById("topupRequests");
+    document.getElementById(
+      "topupRequests"
+    );
+
 
   if(!list) return;
 
 
-  const topups = getTopups();
+  const topups =
+    getTopups();
 
 
   if(topups.length === 0){
@@ -1640,12 +1757,16 @@ function renderTopups(){
 
       <div class="history-item">
 
-        <b>${escapeHTML(t.username)}</b>
+        <b>
+          ${escapeHTML(t.username)}
+        </b>
 
         <br>
 
         จำนวน:
-        <strong>${t.amount} บาท</strong>
+        <strong>
+          ${t.amount} บาท
+        </strong>
 
         <br>
 
@@ -1658,6 +1779,7 @@ function renderTopups(){
 
         ${
           t.status === "รอตรวจสอบ"
+
           ? `
 
             <br><br>
@@ -1675,6 +1797,7 @@ function renderTopups(){
             </button>
 
           `
+
           : ""
         }
 
@@ -1694,12 +1817,17 @@ function renderTopups(){
 function renderAdminHistory(){
 
   const box =
-    document.getElementById("adminHistory");
+    document.getElementById(
+      "adminHistory"
+    );
+
 
   if(!box) return;
 
 
-  const users = getUsers();
+  const users =
+    getUsers();
+
 
   let all = [];
 
@@ -1717,13 +1845,6 @@ function renderAdminHistory(){
     });
 
   }
-
-
-  all.sort(
-    (a,b)=>
-      new Date(b.date) -
-      new Date(a.date)
-  );
 
 
   if(all.length === 0){
@@ -1745,11 +1866,13 @@ function renderAdminHistory(){
 
       <div class="history-item">
 
-        👤 ${escapeHTML(order.username)}
+        👤
+        ${escapeHTML(order.username)}
 
         <br>
 
-        🛒 ${escapeHTML(order.productName)}
+        🛒
+        ${escapeHTML(order.productName)}
 
         <br>
 
@@ -1781,12 +1904,17 @@ function renderAdminHistory(){
 function renderMemberHistory(){
 
   const box =
-    document.getElementById("memberHistory");
+    document.getElementById(
+      "memberHistory"
+    );
+
 
   if(!box || !currentUser) return;
 
 
-  const users = getUsers();
+  const users =
+    getUsers();
+
 
   const history =
     users[currentUser]?.history || [];
@@ -1812,6 +1940,7 @@ function renderMemberHistory(){
       <div class="history-item">
 
         🛒
+
         <strong>
           ${escapeHTML(order.productName)}
         </strong>
@@ -1864,49 +1993,82 @@ function renderMemberHistory(){
 function updateUI(){
 
   const account =
-    document.getElementById("account");
+    document.getElementById(
+      "account"
+    );
+
 
   const member =
-    document.getElementById("member");
+    document.getElementById(
+      "member"
+    );
+
 
   const userBox =
-    document.getElementById("userBox");
+    document.getElementById(
+      "userBox"
+    );
+
 
   const loginLink =
-    document.getElementById("loginLink");
+    document.getElementById(
+      "loginLink"
+    );
 
 
   if(currentUser){
 
-    const users = getUsers();
+    const users =
+      getUsers();
 
-    const user = users[currentUser];
+
+    const user =
+      users[currentUser];
 
 
     if(!user){
 
       logout();
+
       return;
 
     }
 
 
-    account.style.display = "none";
-    member.style.display = "flex";
-    userBox.style.display = "flex";
-    loginLink.style.display = "none";
+    account.style.display =
+      "none";
+
+    member.style.display =
+      "flex";
+
+    userBox.style.display =
+      "flex";
+
+    loginLink.style.display =
+      "none";
 
 
-    document.getElementById("memberName").textContent =
+    document.getElementById(
+      "memberName"
+    ).textContent =
       currentUser;
 
-    document.getElementById("memberEmail").textContent =
+
+    document.getElementById(
+      "memberEmail"
+    ).textContent =
       user.email || "-";
 
-    document.getElementById("memberPoints").textContent =
+
+    document.getElementById(
+      "memberPoints"
+    ).textContent =
       user.points || 0;
 
-    document.getElementById("pointsTop").textContent =
+
+    document.getElementById(
+      "pointsTop"
+    ).textContent =
       user.points || 0;
 
 
@@ -1914,17 +2076,26 @@ function updateUI(){
 
   }else{
 
-    account.style.display = "flex";
-    member.style.display = "none";
-    userBox.style.display = "none";
-    loginLink.style.display = "block";
+    account.style.display =
+      "flex";
+
+    member.style.display =
+      "none";
+
+    userBox.style.display =
+      "none";
+
+    loginLink.style.display =
+      "block";
 
   }
 
 
   if(adminLogged){
 
-    document.getElementById("admin").style.display =
+    document.getElementById(
+      "admin"
+    ).style.display =
       "flex";
 
     renderAdmin();
@@ -1941,39 +2112,64 @@ function updateUI(){
 function escapeHTML(value){
 
   return String(value)
+
     .replaceAll("&","&amp;")
+
     .replaceAll("<","&lt;")
+
     .replaceAll(">","&gt;")
+
     .replaceAll('"',"&quot;")
+
     .replaceAll("'","&#039;");
 
 }
 
 
 /* =========================================
-   ADMIN ACCESS
+   ADMIN MENU
 ========================================= */
 
 const adminLink =
   document.createElement("a");
 
-adminLink.href = "#admin";
-adminLink.textContent = "แอดมิน";
-adminLink.style.color = "#ff3030";
-adminLink.onclick = function(){
 
-  showAdmin();
+adminLink.href =
+  "#admin";
 
-};
 
-document.querySelector("nav").appendChild(adminLink);
+adminLink.textContent =
+  "แอดมิน";
+
+
+adminLink.style.color =
+  "#ff3030";
+
+
+adminLink.onclick =
+  function(){
+
+    showAdmin();
+
+  };
+
+
+document.querySelector(
+  "nav"
+).appendChild(adminLink);
 
 
 /* =========================================
    START
 ========================================= */
 
+// สร้างสินค้าเริ่มต้นก่อน
+createDefaultProducts();
+
+// แสดงสินค้า
 renderProducts();
+
+// อัปเดตสมาชิก / แอดมิน
 updateUI();
 
 </script>
@@ -1981,4 +2177,3 @@ updateUI();
 </body>
 </html>
 เขียนข้อความ
-เขียนถึง Tae Hub
