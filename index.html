@@ -7,279 +7,288 @@
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,sans-serif
 }
 
 body{
-  background:#0b0b0f;
-  color:#fff;
+background:#0b0b0f;
+color:#fff
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#15151b;
-  border-bottom:1px solid #292930;
-  padding:14px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
+position:sticky;
+top:0;
+z-index:100;
+background:#15151b;
+border-bottom:1px solid #292930;
+padding:14px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px
 }
 
 .logo{
-  color:#ff3030;
-  font-size:25px;
-  font-weight:bold;
+color:#ff3030;
+font-size:25px;
+font-weight:bold
 }
 
 nav{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
+display:flex;
+gap:8px;
+align-items:center;
+flex-wrap:wrap
 }
 
 nav a{
-  color:#ddd;
-  text-decoration:none;
-  padding:8px;
+color:#ddd;
+text-decoration:none;
+padding:8px
 }
 
 button{
-  cursor:pointer;
+cursor:pointer
 }
 
 .btn{
-  border:0;
-  border-radius:7px;
-  padding:10px 15px;
-  background:#ff3030;
-  color:#fff;
-  font-weight:bold;
-}
-
-.btn:hover{
-  background:#df2222;
+border:0;
+border-radius:7px;
+padding:10px 15px;
+background:#ff3030;
+color:#fff;
+font-weight:bold
 }
 
 .gray{
-  background:#333;
+background:#333
 }
 
 .hero{
-  text-align:center;
-  padding:90px 20px;
-  background:radial-gradient(circle,#3b0c0c,#160a0a 40%,#0b0b0f 75%);
+text-align:center;
+padding:80px 20px;
+background:radial-gradient(
+circle,
+#3b0c0c,
+#160a0a 40%,
+#0b0b0f 75%
+)
 }
 
 .hero h1{
-  font-size:48px;
-  margin-bottom:15px;
+font-size:45px;
+margin-bottom:15px
 }
 
 .hero span{
-  color:#ff3030;
+color:#ff3030
 }
 
 .hero p{
-  color:#aaa;
-  margin-bottom:25px;
+color:#aaa;
+margin-bottom:25px
 }
 
 section{
-  padding:55px 5%;
+padding:50px 5%
 }
 
 h2{
-  text-align:center;
-  margin-bottom:30px;
+text-align:center;
+margin-bottom:25px
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px
 }
 
 .card{
-  background:#15151c;
-  border:1px solid #292930;
-  border-radius:13px;
-  padding:20px;
+background:#15151c;
+border:1px solid #292930;
+border-radius:13px;
+padding:18px
 }
 
 .card:hover{
-  border-color:#ff3030;
+border-color:#ff3030
 }
 
-.img{
-  height:120px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:45px;
-  background:#0c0c11;
-  border-radius:10px;
-  margin-bottom:15px;
+.product-img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+background:#0c0c11
 }
 
 .card p{
-  color:#999;
-  margin:8px 0;
+color:#999;
+margin:8px 0
 }
 
 .price{
-  color:#ff4545;
-  font-size:21px;
-  font-weight:bold;
-  margin:12px 0;
+color:#ff4545;
+font-size:21px;
+font-weight:bold;
+margin:12px 0
 }
 
 .stock{
-  color:#55e878;
-  margin-bottom:12px;
+color:#55e878;
+margin-bottom:12px
 }
 
-.stock.empty{
-  color:#ff5555;
+.empty{
+color:#ff5555
 }
 
 .account,
 .member,
 .admin{
-  display:none;
-  justify-content:center;
+display:none;
+justify-content:center
 }
 
 .box{
-  width:600px;
-  max-width:100%;
-  background:#15151c;
-  border:1px solid #292930;
-  border-radius:14px;
-  padding:25px;
+width:650px;
+max-width:100%;
+background:#15151c;
+border:1px solid #292930;
+border-radius:14px;
+padding:25px
 }
 
 .input{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  background:#0c0c11;
-  color:#fff;
-  border:1px solid #33333d;
-  border-radius:7px;
-  outline:none;
-}
-
-.input:focus{
-  border-color:#ff3030;
+width:100%;
+padding:12px;
+margin-bottom:12px;
+background:#0c0c11;
+color:#fff;
+border:1px solid #333;
+border-radius:7px;
+outline:none
 }
 
 .full{
-  width:100%;
+width:100%
 }
 
 .msg{
-  text-align:center;
-  margin-top:12px;
+text-align:center;
+margin-top:10px
 }
 
 .green{
-  color:#55e878;
+color:#55e878
 }
 
 .red{
-  color:#ff5555;
+color:#ff5555
 }
 
 .member-card,
 .admin-card{
-  background:#0c0c11;
-  border:1px solid #292930;
-  border-radius:10px;
-  padding:17px;
-  margin-bottom:12px;
-}
-
-.member-card strong{
-  color:#ff4545;
+background:#0c0c11;
+border:1px solid #292930;
+border-radius:10px;
+padding:17px;
+margin-bottom:12px
 }
 
 .points{
-  color:#55e878;
-  font-size:22px;
-  font-weight:bold;
+color:#55e878;
+font-size:22px;
+font-weight:bold
 }
 
 .user{
-  display:none;
-  align-items:center;
-  gap:8px;
-  flex-wrap:wrap;
+display:none;
+align-items:center;
+gap:8px
 }
 
 .badge{
-  padding:8px 11px;
-  border:1px solid #ff3030;
-  border-radius:7px;
-  background:#241313;
-  color:#ff7777;
-}
-
-.admin-title{
-  color:#ff3030;
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.qty{
-  width:90px;
-  padding:8px;
-  background:#0c0c11;
-  border:1px solid #333;
-  color:#fff;
-  border-radius:6px;
+padding:8px 11px;
+border:1px solid #ff3030;
+border-radius:7px;
+background:#241313;
+color:#ff7777
 }
 
 .history-item{
-  background:#0c0c11;
-  border:1px solid #292930;
-  border-radius:9px;
-  padding:15px;
-  margin-bottom:10px;
+background:#0c0c11;
+border:1px solid #292930;
+border-radius:9px;
+padding:15px;
+margin-bottom:10px
 }
 
 .code{
-  color:#55e878;
-  font-size:20px;
-  font-weight:bold;
-  word-break:break-all;
+color:#55e878;
+font-size:19px;
+font-weight:bold;
+word-break:break-all
+}
+
+.qty{
+width:80px;
+padding:9px;
+background:#0c0c11;
+color:#fff;
+border:1px solid #333;
+border-radius:6px
+}
+
+.promo{
+margin:20px 5%;
+padding:25px;
+border-radius:15px;
+background:linear-gradient(
+135deg,
+#3b0c0c,
+#15151c
+);
+border:1px solid #ff3030;
+text-align:center
+}
+
+.slip-preview{
+width:100%;
+max-height:300px;
+object-fit:contain;
+border-radius:10px;
+margin-top:10px;
+display:none
 }
 
 footer{
-  text-align:center;
-  color:#777;
-  padding:30px;
-  border-top:1px solid #292930;
+text-align:center;
+color:#777;
+padding:30px;
+border-top:1px solid #292930
 }
 
 @media(max-width:600px){
-  .hero h1{
-    font-size:35px;
-  }
 
-  header{
-    padding:12px 3%;
-  }
+.hero h1{
+font-size:34px
+}
 
-  nav{
-    font-size:13px;
-  }
+header{
+padding:12px 3%
+}
+
+nav{
+font-size:13px
+}
+
 }
 </style>
 </head>
@@ -288,12 +297,19 @@ footer{
 
 <header>
 
-<div class="logo">RBXSHOP</div>
+<div class="logo">
+RBXSHOP
+</div>
 
 <nav>
 
-<a href="#home">หน้าหลัก</a>
-<a href="#products">สินค้า</a>
+<a href="#home">
+หน้าหลัก
+</a>
+
+<a href="#products">
+สินค้า
+</a>
 
 <a id="loginLink" href="#account">
 เข้าสู่ระบบ
@@ -305,11 +321,19 @@ footer{
 💰 <span id="pointsTop">0</span> พอยต์
 </span>
 
-<button class="btn gray" onclick="logout()">
+<button
+class="btn gray"
+onclick="logout()">
 ออกจากระบบ
 </button>
 
 </div>
+
+<button
+class="btn gray"
+onclick="showAdmin()">
+🔐 แอดมิน
+</button>
 
 </nav>
 
@@ -319,30 +343,62 @@ footer{
 <section id="home" class="hero">
 
 <h1>
-ยินดีต้อนรับสู่ <span>RBXSHOP</span>
+ยินดีต้อนรับสู่
+<span>RBXSHOP</span>
 </h1>
 
-<p>ร้านค้าสินค้าดิจิทัล</p>
+<p>
+ร้านค้าสินค้าดิจิทัล
+</p>
 
-<a class="btn" href="#products">
+<a
+class="btn"
+href="#products">
 ดูสินค้า
 </a>
 
 </section>
 
 
+<div class="promo">
+
+<h2 style="color:#ff3030">
+🔥 โปรโมชั่น RBXSHOP
+</h2>
+
+<p style="color:#ccc;margin:10px 0">
+🎮 สินค้าดิจิทัลราคาพิเศษ
+</p>
+
+<a
+href="#products"
+class="btn"
+style="display:inline-block;text-decoration:none">
+🛒 ซื้อสินค้าเลย
+</a>
+
+</div>
+
+
 <section id="products">
 
-<h2>🛒 สินค้า</h2>
+<h2>
+🛒 สินค้า
+</h2>
 
-<div id="productList" class="cards"></div>
+<div
+id="productList"
+class="cards">
+</div>
 
 </section>
 
 
 <!-- LOGIN -->
 
-<section id="account" class="account">
+<section
+id="account"
+class="account">
 
 <div class="box">
 
@@ -387,7 +443,8 @@ onclick="submitAccount()">
 
 <p id="accountMsg" class="msg"></p>
 
-<p style="text-align:center;margin-top:15px;color:#999">
+<p
+style="text-align:center;margin-top:15px;color:#999">
 
 <span id="switchText">
 ยังไม่มีบัญชี?
@@ -412,11 +469,15 @@ style="background:none;border:0;color:#ff4040">
 
 <!-- MEMBER -->
 
-<section id="member" class="member">
+<section
+id="member"
+class="member">
 
 <div class="box">
 
-<h2>👤 สมาชิก</h2>
+<h2>
+👤 สมาชิก
+</h2>
 
 <div class="member-card">
 ชื่อผู้ใช้:
@@ -438,12 +499,18 @@ style="background:none;border:0;color:#ff4040">
 
 </div>
 
+
 <div class="member-card">
 
-<h3>💰 เติมพอยต์</h3>
+<h3>
+💰 เติมพอยต์
+</h3>
 
 <p style="color:#999;margin:10px 0">
-บัญชีร้าน: 231-3-58543-6
+
+บัญชีร้าน:
+<b>231-3-58543-6</b>
+
 </p>
 
 <input
@@ -453,6 +520,23 @@ type="number"
 min="1"
 placeholder="จำนวนเงิน">
 
+<label
+style="display:block;margin-bottom:8px">
+
+🧾 แนบสลิป
+
+</label>
+
+<input
+id="slip"
+class="input"
+type="file"
+accept="image/*">
+
+<img
+id="slipPreview"
+class="slip-preview">
+
 <button
 class="btn full"
 onclick="requestTopup()">
@@ -461,15 +545,22 @@ onclick="requestTopup()">
 
 </button>
 
-<p id="topupMsg" class="msg"></p>
+<p
+id="topupMsg"
+class="msg">
+</p>
 
 </div>
 
+
 <div class="member-card">
 
-<h3>📜 ประวัติการซื้อ</h3>
+<h3>
+📜 ประวัติการซื้อ
+</h3>
 
-<div id="memberHistory"></div>
+<div id="memberHistory">
+</div>
 
 </div>
 
@@ -480,17 +571,22 @@ onclick="requestTopup()">
 
 <!-- ADMIN -->
 
-<section id="admin" class="admin">
+<section
+id="admin"
+class="admin">
 
 <div class="box">
 
-<h2 class="admin-title">
+<h2 style="color:#ff3030">
 🔐 ระบบหลังบ้านแอดมิน
 </h2>
 
+
 <div class="admin-card">
 
-<h3>➕ เพิ่มสินค้า</h3>
+<h3>
+➕ เพิ่มสินค้า
+</h3>
 
 <br>
 
@@ -508,58 +604,73 @@ placeholder="รหัสสินค้า">
 id="newPrice"
 class="input"
 type="number"
-min="1"
 placeholder="ราคา / ชิ้น">
 
 <input
 id="newStock"
 class="input"
 type="number"
-min="1"
 placeholder="จำนวนสต๊อก">
+
+<input
+id="newImage"
+class="input"
+placeholder="URL รูปภาพ">
 
 <button
 class="btn full"
 onclick="addProduct()">
 
-เพิ่มสินค้าเข้าสต๊อก
+เพิ่มสินค้า
 
 </button>
 
-<p id="adminMsg" class="msg"></p>
+<p
+id="adminMsg"
+class="msg">
+</p>
 
 </div>
 
 
 <div class="admin-card">
 
-<h3>📦 จัดการสต๊อก</h3>
+<h3>
+📦 จัดการสต๊อก
+</h3>
 
 <br>
 
-<div id="adminProducts"></div>
+<div id="adminProducts">
+</div>
 
 </div>
 
 
 <div class="admin-card">
 
-<h3>💳 รายการเติมเงิน</h3>
+<h3>
+💳 รายการเติมเงิน
+</h3>
 
 <br>
 
-<div id="topupRequests"></div>
+<div id="topupRequests">
+</div>
 
 </div>
 
 
 <div class="admin-card">
 
-<h3>📜 ประวัติการขายทั้งหมด</h3>
+<h3>
+📜 ประวัติการขาย
+</h3>
 
 <br>
 
-<div id="adminHistory"></div>
+<div id="adminHistory">
+</div>
 
 </div>
 
@@ -575,119 +686,126 @@ onclick="addProduct()">
 
 <script>
 
-/* ==============================
-   ADMIN
-============================== */
+/* =========================
+   CONFIG
+========================= */
 
-const ADMIN_NAME = "TAEHUB OM";
-const ADMIN_PASSWORD = "0653375285OM";
+const ADMIN_NAME="TAEHUB OM";
+const ADMIN_PASSWORD="0653375285OM";
 
-const SHOP_BANK = "231-3-58543-6";
+let registerMode=false;
 
-
-/* ==============================
-   STATE
-============================== */
-
-let registerMode = false;
-
-let currentUser =
+let currentUser=
 localStorage.getItem("rbx_current_user");
 
-let adminLogged =
-localStorage.getItem("rbx_admin_logged") === "true";
+let adminLogged=
+localStorage.getItem("rbx_admin_logged")==="true";
 
 
-/* ==============================
-   STORAGE
-============================== */
+/* =========================
+   DATABASE LOCAL
+========================= */
 
 function getUsers(){
 
 return JSON.parse(
-localStorage.getItem("rbx_users") || "{}"
+localStorage.getItem("rbx_users")||"{}"
 );
 
 }
 
-function saveUsers(users){
+function saveUsers(x){
 
 localStorage.setItem(
 "rbx_users",
-JSON.stringify(users)
+JSON.stringify(x)
 );
 
 }
+
 
 function getProducts(){
 
 return JSON.parse(
-localStorage.getItem("rbx_products") || "[]"
+localStorage.getItem("rbx_products")||"[]"
 );
 
 }
 
-function saveProducts(products){
+function saveProducts(x){
 
 localStorage.setItem(
 "rbx_products",
-JSON.stringify(products)
+JSON.stringify(x)
 );
 
 }
+
 
 function getTopups(){
 
 return JSON.parse(
-localStorage.getItem("rbx_topups") || "[]"
+localStorage.getItem("rbx_topups")||"[]"
 );
 
 }
 
-function saveTopups(data){
+function saveTopups(x){
 
 localStorage.setItem(
 "rbx_topups",
-JSON.stringify(data)
+JSON.stringify(x)
 );
 
 }
 
 
-/* ==============================
+/* =========================
    DEFAULT PRODUCTS
-============================== */
+========================= */
 
 function createDefaultProducts(){
 
-const products = getProducts();
+const products=getProducts();
 
-if(products.length > 0) return;
+if(products.length)return;
 
 saveProducts([
 
 {
-id:Date.now(),
-name:"Robux 80",
+id:1,
+name:"Robux 80 - Blox Fruits",
 code:"RBX80",
 price:50,
-stock:10
+stock:10,
+
+image:
+"https://placehold.co/800x500/15151c/ff3030?text=RBXSHOP+80"
+
 },
 
 {
-id:Date.now()+1,
+id:2,
 name:"Robux 170",
 code:"RBX170",
 price:100,
-stock:10
+stock:10,
+
+image:
+"https://placehold.co/800x500/15151c/ffffff?text=RBXSHOP+170"
+
 },
 
 {
-id:Date.now()+2,
+id:3,
 name:"Robux 400",
 code:"RBX400",
 price:200,
-stock:10
+stock:10,
+
+image:
+"https://placehold.co/800x500/15151c/ffffff?text=RBXSHOP+400"
+
 }
 
 ]);
@@ -695,100 +813,179 @@ stock:10
 }
 
 
-/* ==============================
+/* =========================
+   IMAGE PREVIEW
+========================= */
+
+document
+.getElementById("slip")
+.addEventListener("change",function(){
+
+const file=this.files[0];
+
+const preview=
+document.getElementById("slipPreview");
+
+if(!file){
+
+preview.style.display="none";
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=function(e){
+
+preview.src=e.target.result;
+
+preview.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* =========================
    ACCOUNT MODE
-============================== */
+========================= */
 
 function switchMode(){
 
-registerMode = !registerMode;
+registerMode=!registerMode;
 
-document.getElementById("accountTitle").textContent =
-registerMode ? "สมัครสมาชิก" : "เข้าสู่ระบบ";
+document.getElementById("accountTitle")
+.textContent=
+registerMode
+?"สมัครสมาชิก"
+:"เข้าสู่ระบบ";
 
-document.getElementById("submitText").textContent =
-registerMode ? "สมัครสมาชิก" : "เข้าสู่ระบบ";
+document.getElementById("submitText")
+.textContent=
+registerMode
+?"สมัครสมาชิก"
+:"เข้าสู่ระบบ";
 
-document.getElementById("switchText").textContent =
-registerMode ? "มีบัญชีอยู่แล้ว?" : "ยังไม่มีบัญชี?";
+document.getElementById("switchText")
+.textContent=
+registerMode
+?"มีบัญชีอยู่แล้ว?"
+:"ยังไม่มีบัญชี?";
 
-document.getElementById("switchBtn").textContent =
-registerMode ? "เข้าสู่ระบบ" : "สมัครสมาชิก";
+document.getElementById("switchBtn")
+.textContent=
+registerMode
+?"เข้าสู่ระบบ"
+:"สมัครสมาชิก";
 
-document.getElementById("email").style.display =
-registerMode ? "block" : "none";
+document.getElementById("email")
+.style.display=
+registerMode
+?"block"
+:"none";
 
-document.getElementById("confirmPassword").style.display =
-registerMode ? "block" : "none";
+document.getElementById("confirmPassword")
+.style.display=
+registerMode
+?"block"
+:"none";
 
-document.getElementById("accountMsg").textContent="";
+document.getElementById("accountMsg")
+.textContent="";
 
 }
 
 
-/* ==============================
-   ACCOUNT
-============================== */
+/* =========================
+   LOGIN / REGISTER
+========================= */
 
 function submitAccount(){
 
-const username =
-document.getElementById("username").value.trim();
+const username=
+document.getElementById("username")
+.value.trim();
 
-const email =
-document.getElementById("email").value.trim();
+const email=
+document.getElementById("email")
+.value.trim();
 
-const password =
-document.getElementById("password").value;
+const password=
+document.getElementById("password")
+.value;
 
-const confirm =
-document.getElementById("confirmPassword").value;
+const confirm=
+document.getElementById("confirmPassword")
+.value;
 
-const msg =
+const msg=
 document.getElementById("accountMsg");
 
-const users = getUsers();
+const users=getUsers();
 
 
 if(registerMode){
 
-if(!username || !email || !password || !confirm){
+if(
+!username||
+!email||
+!password||
+!confirm
+){
 
 msg.className="msg red";
-msg.textContent="กรุณากรอกข้อมูลให้ครบ";
+msg.textContent=
+"กรุณากรอกข้อมูลให้ครบ";
+
 return;
 
 }
 
-if(password.length < 6){
+
+if(password.length<6){
 
 msg.className="msg red";
-msg.textContent="รหัสผ่านต้องมีอย่างน้อย 6 ตัว";
+msg.textContent=
+"รหัสผ่านอย่างน้อย 6 ตัว";
+
 return;
 
 }
 
-if(password !== confirm){
+
+if(password!==confirm){
 
 msg.className="msg red";
-msg.textContent="รหัสผ่านไม่ตรงกัน";
+msg.textContent=
+"รหัสผ่านไม่ตรงกัน";
+
 return;
 
 }
+
 
 if(users[username]){
 
 msg.className="msg red";
-msg.textContent="ชื่อผู้ใช้นี้มีอยู่แล้ว";
+msg.textContent=
+"ชื่อผู้ใช้นี้มีอยู่แล้ว";
+
 return;
 
 }
 
+
 users[username]={
 
 email:email,
+
 password:password,
+
 points:0,
+
 history:[]
 
 };
@@ -796,12 +993,9 @@ history:[]
 saveUsers(users);
 
 msg.className="msg green";
-msg.textContent="สมัครสมาชิกสำเร็จ";
 
-document.getElementById("username").value="";
-document.getElementById("email").value="";
-document.getElementById("password").value="";
-document.getElementById("confirmPassword").value="";
+msg.textContent=
+"สมัครสมาชิกสำเร็จ";
 
 switchMode();
 
@@ -810,22 +1004,28 @@ return;
 }
 
 
-if(!username || !password){
+if(!username||!password){
 
 msg.className="msg red";
-msg.textContent="กรุณากรอกข้อมูล";
+
+msg.textContent=
+"กรุณากรอกข้อมูล";
+
 return;
 
 }
 
 
 if(
-!users[username] ||
-users[username].password !== password
+!users[username]||
+users[username].password!==password
 ){
 
 msg.className="msg red";
-msg.textContent="ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+
+msg.textContent=
+"ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+
 return;
 
 }
@@ -840,27 +1040,31 @@ username
 
 updateUI();
 
+location.hash="member";
+
 }
 
 
-/* ==============================
+/* =========================
    ADMIN LOGIN
-============================== */
+========================= */
 
 function adminLogin(){
 
-const name = prompt("ชื่อแอดมิน");
+const name=
+prompt("ชื่อแอดมิน");
 
-if(name === null) return;
+if(name===null)return;
 
-const password = prompt("รหัสผ่านแอดมิน");
+const password=
+prompt("รหัสผ่านแอดมิน");
 
-if(password === null) return;
+if(password===null)return;
 
 
 if(
-name.trim() === ADMIN_NAME &&
-password === ADMIN_PASSWORD
+name.trim()===ADMIN_NAME &&
+password===ADMIN_PASSWORD
 ){
 
 adminLogged=true;
@@ -870,154 +1074,146 @@ localStorage.setItem(
 "true"
 );
 
-const admin =
-document.getElementById("admin");
+showAdmin();
 
-admin.style.display="flex";
-
-renderAdmin();
-
-setTimeout(function(){
-
-admin.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},100);
-
-alert("เข้าสู่ระบบแอดมินสำเร็จ");
+alert(
+"เข้าสู่ระบบแอดมินสำเร็จ"
+);
 
 }else{
 
-alert("ข้อมูลแอดมินไม่ถูกต้อง");
+alert(
+"ข้อมูลแอดมินไม่ถูกต้อง"
+);
 
 }
 
 }
 
-
-/* ==============================
-   SHOW ADMIN
-============================== */
 
 function showAdmin(){
 
-if(adminLogged){
+if(!adminLogged){
 
-const admin =
-document.getElementById("admin");
-
-admin.style.display="flex";
-
-renderAdmin();
-
-admin.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+adminLogin();
 
 return;
 
 }
 
-adminLogin();
+const box=
+document.getElementById("admin");
+
+box.style.display="flex";
+
+renderAdmin();
+
+box.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
-/* ==============================
-   ADMIN BUTTON
-============================== */
-
-const adminLink =
-document.createElement("button");
-
-adminLink.textContent="🔐 แอดมิน";
-
-adminLink.className="btn gray";
-
-adminLink.onclick=function(){
-
-showAdmin();
-
-};
-
-document.querySelector("nav")
-.appendChild(adminLink);
-
-
-/* ==============================
-   LOGOUT USER
-============================== */
-
-function logout(){
-
-currentUser=null;
-
-localStorage.removeItem(
-"rbx_current_user"
-);
-
-updateUI();
-
-}
-
-
-/* ==============================
+/* =========================
    PRODUCTS
-============================== */
+========================= */
 
 function renderProducts(){
 
-const list =
+const list=
 document.getElementById("productList");
 
 const products=getProducts();
 
 list.innerHTML="";
 
-if(products.length===0){
+
+if(!products.length){
 
 list.innerHTML=
-"<p style='color:#777;text-align:center'>ยังไม่มีสินค้า</p>";
+"<p class='empty'>ไม่มีสินค้า</p>";
 
 return;
 
 }
 
-products.forEach(function(p,index){
+
+products.forEach((p,i)=>{
 
 const empty=p.stock<=0;
 
-list.innerHTML += `
+
+list.innerHTML+=`
 
 <div class="card">
 
-<div class="img">🎮</div>
+${
+p.image
 
-<h3>${escapeHTML(p.name)}</h3>
+?
+
+`
+<img
+class="product-img"
+src="${escapeHTML(p.image)}"
+onerror="this.src='https://placehold.co/800x500/15151c/ff3030?text=RBXSHOP'">
+`
+
+:
+
+`
+<div
+class="product-img"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px">
+🎮
+</div>
+`
+
+}
+
+<h3>
+${escapeHTML(p.name)}
+</h3>
 
 <p>
-รหัสสินค้า: ${escapeHTML(p.code)}
+รหัสสินค้า:
+${escapeHTML(p.code)}
 </p>
 
 <div class="price">
 ${p.price} พอยต์ / ชิ้น
 </div>
 
-<div class="stock ${empty ? "empty":""}">
+<div
+class="stock
+${empty?"empty":""}">
 
-${empty
-?"❌ สินค้าหมด"
-:"📦 เหลือ "+p.stock+" ชิ้น"}
+${
+empty
+?
+"❌ สินค้าหมด"
+:
+"📦 เหลือ "+p.stock+" ชิ้น"
+}
 
 </div>
 
-${empty ? "" : `
+${
+empty
+?
+""
+
+:
+
+`
 
 <input
-id="qty-${index}"
+id="qty-${i}"
 class="qty"
 type="number"
 min="1"
@@ -1026,13 +1222,14 @@ value="1">
 
 <button
 class="btn"
-onclick="buyProduct(${index})">
+onclick="buyProduct(${i})">
 
 ซื้อสินค้า
 
 </button>
 
-`}
+`
+}
 
 </div>
 
@@ -1043,363 +1240,507 @@ onclick="buyProduct(${index})">
 }
 
 
-/* ==============================
+/* =========================
    BUY
-============================== */
+========================= */
 
 function buyProduct(index){
 
 if(!currentUser){
 
-alert("กรุณาเข้าสู่ระบบก่อนซื้อสินค้า");
-
-document.getElementById("account")
-.scrollIntoView({behavior:"smooth"});
-
-return;
-
-}
-
-const products=getProducts();
-const users=getUsers();
-const product=products[index];
-const user=users[currentUser];
-
-if(!product){
-
-alert("ไม่พบสินค้า");
-return;
-
-}
-
-const qty=Number(
-document.getElementById("qty-"+index).value
+alert(
+"กรุณาเข้าสู่ระบบก่อนซื้อ"
 );
 
-if(!qty || qty<1){
+location.hash="account";
 
-alert("จำนวนไม่ถูกต้อง");
 return;
 
 }
 
-if(qty>product.stock){
 
-alert("สต๊อกไม่พอ");
+const products=getProducts();
+
+const users=getUsers();
+
+const p=products[index];
+
+const u=users[currentUser];
+
+
+const qty=Number(
+document.getElementById(
+"qty-"+index
+).value
+);
+
+
+if(
+qty<1||
+qty>p.stock
+){
+
+alert(
+"จำนวนสินค้าไม่ถูกต้อง"
+);
+
 return;
 
 }
 
-const total=product.price*qty;
 
-if((user.points||0)<total){
+const total=p.price*qty;
 
-alert("พอยต์ไม่พอ");
+
+if((u.points||0)<total){
+
+alert(
+"พอยต์ไม่พอ"
+);
+
 return;
 
 }
 
-user.points-=total;
-product.stock-=qty;
+
+u.points-=total;
+
+p.stock-=qty;
+
 
 const codes=[];
+
 
 for(let i=0;i<qty;i++){
 
 codes.push(
-product.code+"-"+
+
+p.code+
+"-"+
 Math.random()
 .toString(36)
 .substring(2,8)
 .toUpperCase()
+
 );
 
 }
 
-const order={
+
+u.history.unshift({
 
 id:"ORD-"+Date.now(),
-username:currentUser,
-productName:product.name,
-productCode:product.code,
+
+productName:p.name,
+
+productCode:p.code,
+
 quantity:qty,
+
 total:total,
+
 codes:codes,
-date:new Date().toLocaleString("th-TH")
 
-};
+date:new Date()
+.toLocaleString("th-TH")
 
-if(!user.history)
-user.history=[];
+});
 
-user.history.unshift(order);
-
-users[currentUser]=user;
-products[index]=product;
 
 saveUsers(users);
+
 saveProducts(products);
 
+
 alert(
-"ซื้อสำเร็จ\nใช้ "+total+" พอยต์"
+"ซื้อสินค้าเรียบร้อย"
 );
 
 renderProducts();
+
 updateUI();
 
 }
 
 
-/* ==============================
+/* =========================
    TOPUP
-============================== */
+========================= */
 
 function requestTopup(){
 
 if(!currentUser){
 
-alert("กรุณาเข้าสู่ระบบ");
-return;
-
-}
-
-const amount=Number(
-document.getElementById("topupAmount").value
+alert(
+"กรุณาเข้าสู่ระบบ"
 );
 
-const msg=document.getElementById("topupMsg");
-
-if(!amount || amount<=0){
-
-msg.className="msg red";
-msg.textContent="กรุณากรอกจำนวนเงิน";
 return;
 
 }
 
-const topups=getTopups();
+
+const amount=Number(
+document.getElementById(
+"topupAmount"
+).value
+);
+
+const file=
+document.getElementById(
+"slip"
+).files[0];
+
+const msg=
+document.getElementById(
+"topupMsg"
+);
+
+
+if(!amount||amount<=0){
+
+msg.className="msg red";
+
+msg.textContent=
+"กรุณากรอกจำนวนเงิน";
+
+return;
+
+}
+
+
+if(!file){
+
+msg.className="msg red";
+
+msg.textContent=
+"กรุณาแนบสลิปก่อนส่ง";
+
+return;
+
+}
+
+
+const reader=
+new FileReader();
+
+
+reader.onload=function(e){
+
+const topups=
+getTopups();
+
 
 topups.unshift({
 
 id:"TOP-"+Date.now(),
+
 username:currentUser,
+
 amount:amount,
+
+slip:e.target.result,
+
 status:"รอตรวจสอบ",
-date:new Date().toLocaleString("th-TH")
+
+date:new Date()
+.toLocaleString("th-TH")
 
 });
 
+
 saveTopups(topups);
 
-document.getElementById("topupAmount").value="";
+
+document.getElementById(
+"topupAmount"
+).value="";
+
+document.getElementById(
+"slip"
+).value="";
+
+document.getElementById(
+"slipPreview"
+).style.display="none";
+
 
 msg.className="msg green";
-msg.textContent="ส่งรายการแล้ว รอแอดมินตรวจสอบ";
 
-if(adminLogged)
+msg.textContent=
+"ส่งรายการเติมเงินแล้ว รอแอดมินตรวจสอบ";
+
+
+if(adminLogged){
+
 renderAdmin();
 
 }
 
+};
 
-/* ==============================
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =========================
    ADD PRODUCT
-============================== */
+========================= */
 
 function addProduct(){
 
-if(!adminLogged){
+if(!adminLogged)return;
 
-alert("ไม่มีสิทธิ์");
-return;
-
-}
 
 const name=
-document.getElementById("newName").value.trim();
+document.getElementById(
+"newName"
+).value.trim();
 
 const code=
-document.getElementById("newCode").value.trim();
+document.getElementById(
+"newCode"
+).value.trim();
 
-const price=
-Number(document.getElementById("newPrice").value);
+const price=Number(
+document.getElementById(
+"newPrice"
+).value
+);
 
-const stock=
-Number(document.getElementById("newStock").value);
+const stock=Number(
+document.getElementById(
+"newStock"
+).value
+);
 
-const msg=
-document.getElementById("adminMsg");
+const image=
+document.getElementById(
+"newImage"
+).value.trim();
 
-if(!name || !code || price<=0 || stock<=0){
 
-msg.className="msg red";
-msg.textContent="กรอกข้อมูลสินค้าให้ครบ";
+if(
+!name||
+!code||
+price<=0||
+stock<=0
+){
+
+adminMsg.className="msg red";
+
+adminMsg.textContent=
+"กรอกข้อมูลให้ครบ";
+
 return;
 
 }
+
 
 const products=getProducts();
 
-if(products.some(function(p){
 
-return p.code.toLowerCase()===code.toLowerCase();
+if(
+products.some(
+p=>p.code.toLowerCase()===
+code.toLowerCase()
+)
+){
 
-})){
+adminMsg.className="msg red";
 
-msg.className="msg red";
-msg.textContent="รหัสสินค้านี้มีอยู่แล้ว";
+adminMsg.textContent=
+"รหัสสินค้าซ้ำ";
+
 return;
 
 }
+
 
 products.push({
 
 id:Date.now(),
+
 name:name,
+
 code:code,
+
 price:price,
-stock:stock
+
+stock:stock,
+
+image:image
 
 });
 
+
 saveProducts(products);
+
+
+adminMsg.className="msg green";
+
+adminMsg.textContent=
+"เพิ่มสินค้าแล้ว";
+
 
 document.getElementById("newName").value="";
 document.getElementById("newCode").value="";
 document.getElementById("newPrice").value="";
 document.getElementById("newStock").value="";
+document.getElementById("newImage").value="";
 
-msg.className="msg green";
-msg.textContent="เพิ่มสินค้าแล้ว";
 
 renderProducts();
+
 renderAdmin();
 
 }
 
 
-/* ==============================
+/* =========================
    STOCK
-============================== */
+========================= */
 
-function changeStock(index,amount){
+function changeStock(i,n){
 
-if(!adminLogged)return;
+const p=getProducts();
 
-const products=getProducts();
+p[i].stock+=n;
 
-if(!products[index])return;
+if(p[i].stock<0){
 
-products[index].stock += Number(amount);
+p[i].stock=0;
 
-if(products[index].stock<0)
-products[index].stock=0;
+}
 
-saveProducts(products);
+saveProducts(p);
 
 renderProducts();
+
 renderAdmin();
 
 }
 
 
-function deleteProduct(index){
+function deleteProduct(i){
 
-if(!adminLogged)return;
+if(!confirm(
+"ลบสินค้านี้?"
+))return;
 
-if(!confirm("ต้องการลบสินค้านี้หรือไม่?"))
-return;
 
-const products=getProducts();
+const p=getProducts();
 
-products.splice(index,1);
+p.splice(i,1);
 
-saveProducts(products);
+saveProducts(p);
 
 renderProducts();
+
 renderAdmin();
 
 }
 
 
-/* ==============================
-   TOPUP APPROVE
-============================== */
+/* =========================
+   TOPUP ADMIN
+========================= */
 
-function approveTopup(index){
-
-if(!adminLogged)return;
+function approveTopup(i){
 
 const topups=getTopups();
-const item=topups[index];
 
-if(!item || item.status!=="รอตรวจสอบ")
-return;
+const t=topups[i];
+
+
+if(
+!t||
+t.status!=="รอตรวจสอบ"
+)return;
+
 
 const users=getUsers();
 
-if(!users[item.username]){
 
-alert("ไม่พบสมาชิก");
+if(!users[t.username]){
+
+alert(
+"ไม่พบสมาชิก"
+);
+
 return;
 
 }
 
-users[item.username].points=
-(users[item.username].points||0)+item.amount;
 
-item.status="อนุมัติ";
+users[t.username].points=
+(users[t.username].points||0)
++t.amount;
 
-item.approvedAt=
-new Date().toLocaleString("th-TH");
+
+t.status="อนุมัติ";
+
+t.approvedAt=
+new Date()
+.toLocaleString("th-TH");
+
 
 saveUsers(users);
+
 saveTopups(topups);
 
 renderAdmin();
+
 updateUI();
 
 }
 
 
-function rejectTopup(index){
+function rejectTopup(i){
 
-if(!adminLogged)return;
+const t=getTopups();
 
-const topups=getTopups();
+if(!t[i])return;
 
-if(!topups[index])return;
+t[i].status="ปฏิเสธ";
 
-topups[index].status="ปฏิเสธ";
-
-saveTopups(topups);
+saveTopups(t);
 
 renderAdmin();
 
 }
 
 
-/* ==============================
+/* =========================
    ADMIN RENDER
-============================== */
+========================= */
 
 function renderAdmin(){
 
 if(!adminLogged)return;
 
+
 const products=getProducts();
 
-let html="";
+const box=
+document.getElementById(
+"adminProducts"
+);
 
-products.forEach(function(p,i){
+box.innerHTML="";
 
-html += `
 
-<div class="member-card">
+products.forEach((p,i)=>{
 
-<strong>
+box.innerHTML+=`
+
+<div class="history-item">
+
+<b>
 ${escapeHTML(p.name)}
-</strong>
+</b>
 
 <br>
 
@@ -1409,14 +1750,12 @@ ${escapeHTML(p.code)}
 <br>
 
 ราคา:
-${p.price} พอยต์
+${p.price}
 
 <br>
 
 สต๊อก:
-<span class="green">
 ${p.stock}
-</span>
 
 <br><br>
 
@@ -1450,80 +1789,115 @@ onclick="deleteProduct(${i})">
 
 });
 
-document.getElementById("adminProducts").innerHTML=
-html || "ยังไม่มีสินค้า";
 
 renderTopups();
+
 renderAdminHistory();
 
 }
 
 
-/* ==============================
-   TOPUPS ADMIN
-============================== */
+/* =========================
+   TOPUPS
+========================= */
 
 function renderTopups(){
 
-const list=
-document.getElementById("topupRequests");
+const box=
+document.getElementById(
+"topupRequests"
+);
 
 const topups=getTopups();
 
-if(topups.length===0){
+box.innerHTML="";
 
-list.innerHTML=
-"<span style='color:#777'>ไม่มีรายการ</span>";
+
+if(!topups.length){
+
+box.innerHTML=
+"ไม่มีรายการ";
 
 return;
 
 }
 
-list.innerHTML="";
 
-topups.forEach(function(t,i){
+topups.forEach((t,i)=>{
 
-list.innerHTML += `
+box.innerHTML+=`
 
 <div class="history-item">
 
+👤
 <b>
 ${escapeHTML(t.username)}
 </b>
 
 <br>
 
-จำนวน:
-<strong>
-${t.amount} บาท
-</strong>
+💰 ${t.amount} บาท
 
 <br>
 
-สถานะ:
+📅
+${escapeHTML(t.date)}
+
+<br>
+
+📌
 ${escapeHTML(t.status)}
 
 <br>
 
-${escapeHTML(t.date)}
+${
+t.slip
 
-${t.status==="รอตรวจสอบ" ? `
+?
 
-<br><br>
+`
+<img
+src="${t.slip}"
+style="
+width:100%;
+max-height:300px;
+object-fit:contain;
+border-radius:10px;
+margin-top:10px">
+`
+
+:
+""
+}
+
+
+${
+t.status==="รอตรวจสอบ"
+
+?
+
+`
+
+<br>
 
 <button
 class="btn"
 onclick="approveTopup(${i})">
-อนุมัติ
+✅ อนุมัติ
 </button>
 
 <button
 class="btn gray"
 onclick="rejectTopup(${i})">
-ปฏิเสธ
+❌ ปฏิเสธ
 </button>
 
-`:""}
+`
+
+:
+""
+
+}
 
 </div>
 
@@ -1534,64 +1908,77 @@ onclick="rejectTopup(${i})">
 }
 
 
-/* ==============================
-   ADMIN HISTORY
-============================== */
+/* =========================
+   HISTORY
+========================= */
 
 function renderAdminHistory(){
 
 const box=
-document.getElementById("adminHistory");
+document.getElementById(
+"adminHistory"
+);
 
 const users=getUsers();
 
 let all=[];
 
-for(const username in users){
 
-(users[username].history||[])
-.forEach(function(order){
+for(const name in users){
 
-all.push(order);
+(users[name].history||[])
+.forEach(o=>{
+
+all.push({
+...o,
+username:name
+});
 
 });
 
 }
 
-if(all.length===0){
+
+if(!all.length){
 
 box.innerHTML=
-"<span style='color:#777'>ยังไม่มีประวัติการขาย</span>";
+"ยังไม่มีประวัติ";
 
 return;
 
 }
 
+
 box.innerHTML="";
 
-all.forEach(function(order){
 
-box.innerHTML += `
+all.forEach(o=>{
+
+box.innerHTML+=`
 
 <div class="history-item">
 
-👤 ${escapeHTML(order.username)}
+👤
+${escapeHTML(o.username)}
 
 <br>
 
-🛒 ${escapeHTML(order.productName)}
+🛒
+${escapeHTML(o.productName)}
 
 <br>
 
-จำนวน: ${order.quantity}
+จำนวน:
+${o.quantity}
 
 <br>
 
-ยอด: ${order.total} พอยต์
+ยอด:
+${o.total} พอยต์
 
 <br>
 
-${escapeHTML(order.date)}
+${escapeHTML(o.date)}
 
 </div>
 
@@ -1602,76 +1989,71 @@ ${escapeHTML(order.date)}
 }
 
 
-/* ==============================
-   MEMBER HISTORY
-============================== */
-
 function renderMemberHistory(){
 
 const box=
-document.getElementById("memberHistory");
+document.getElementById(
+"memberHistory"
+);
 
-if(!box || !currentUser)return;
+if(!currentUser)return;
+
 
 const users=getUsers();
 
 const history=
 users[currentUser]?.history||[];
 
-if(history.length===0){
+
+if(!history.length){
 
 box.innerHTML=
-"<span style='color:#777'>ยังไม่มีประวัติการซื้อ</span>";
+"ยังไม่มีประวัติการซื้อ";
 
 return;
 
 }
 
+
 box.innerHTML="";
 
-history.forEach(function(order){
 
-box.innerHTML += `
+history.forEach(o=>{
+
+box.innerHTML+=`
 
 <div class="history-item">
 
-🛒 <strong>
-${escapeHTML(order.productName)}
-</strong>
-
-<br>
-
-รหัสสินค้า:
-${escapeHTML(order.productCode)}
+🛒
+<b>
+${escapeHTML(o.productName)}
+</b>
 
 <br>
 
 จำนวน:
-${order.quantity}
+${o.quantity}
 
 <br>
 
 ราคา:
-${order.total} พอยต์
+${o.total} พอยต์
 
 <br>
 
-วันที่:
-${escapeHTML(order.date)}
+${escapeHTML(o.date)}
 
 <br><br>
 
-โค้ด:
+โค้ด:<br>
 
-${order.codes.map(function(code){
+${o.codes.map(c=>
 
-return `
-<div class="code">
-${escapeHTML(code)}
-</div>
-`;
+`<div class="code">
+${escapeHTML(c)}
+</div>`
 
-}).join("")}
+).join("")}
 
 </div>
 
@@ -1682,9 +2064,9 @@ ${escapeHTML(code)}
 }
 
 
-/* ==============================
-   UPDATE UI
-============================== */
+/* =========================
+   UI
+========================= */
 
 function updateUI(){
 
@@ -1694,57 +2076,74 @@ document.getElementById("account");
 const member=
 document.getElementById("member");
 
-const userBox=
-document.getElementById("userBox");
-
-const loginLink=
-document.getElementById("loginLink");
-
 
 if(currentUser){
 
-const users=getUsers();
-const user=users[currentUser];
+const u=
+getUsers()[currentUser];
 
-if(!user){
-
-logout();
-return;
-
-}
 
 account.style.display="none";
-member.style.display="flex";
-userBox.style.display="flex";
-loginLink.style.display="none";
 
-document.getElementById("memberName").textContent=
+member.style.display="flex";
+
+document.getElementById(
+"userBox"
+).style.display="flex";
+
+document.getElementById(
+"loginLink"
+).style.display="none";
+
+
+document.getElementById(
+"memberName"
+).textContent=
 currentUser;
 
-document.getElementById("memberEmail").textContent=
-user.email||"-";
 
-document.getElementById("memberPoints").textContent=
-user.points||0;
+document.getElementById(
+"memberEmail"
+).textContent=
+u.email||"-";
 
-document.getElementById("pointsTop").textContent=
-user.points||0;
+
+document.getElementById(
+"memberPoints"
+).textContent=
+u.points||0;
+
+
+document.getElementById(
+"pointsTop"
+).textContent=
+u.points||0;
+
 
 renderMemberHistory();
 
 }else{
 
 account.style.display="flex";
+
 member.style.display="none";
-userBox.style.display="none";
-loginLink.style.display="block";
+
+document.getElementById(
+"userBox"
+).style.display="none";
+
+document.getElementById(
+"loginLink"
+).style.display="block";
 
 }
 
 
 if(adminLogged){
 
-document.getElementById("admin").style.display="flex";
+document.getElementById(
+"admin"
+).style.display="flex";
 
 renderAdmin();
 
@@ -1753,26 +2152,53 @@ renderAdmin();
 }
 
 
-/* ==============================
-   ESCAPE
-============================== */
+/* =========================
+   LOGOUT
+========================= */
 
-function escapeHTML(value){
+function logout(){
 
-return String(value)
+currentUser=null;
 
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
+localStorage.removeItem(
+"rbx_current_user"
+);
+
+updateUI();
 
 }
 
 
-/* ==============================
+/* =========================
+   SECURITY DISPLAY
+========================= */
+
+function escapeHTML(v){
+
+return String(v)
+
+.replaceAll("&","&amp;")
+
+.replaceAll("<","&lt;")
+
+.replaceAll(">","&gt;")
+
+.replaceAll(
+'"',
+"&quot;"
+)
+
+.replaceAll(
+"'",
+"&#039;"
+);
+
+}
+
+
+/* =========================
    START
-============================== */
+========================= */
 
 createDefaultProducts();
 
@@ -1784,29 +2210,4 @@ updateUI();
 
 </body>
 </html>
-<div style="
-  margin:20px 5%;
-  padding:25px;
-  border-radius:15px;
-  background:linear-gradient(135deg,#3b0c0c,#15151c);
-  border:1px solid #ff3030;
-  text-align:center;
-">
-
-  <h2 style="color:#ff3030;">
-    🔥 โปรโมชั่น RBXSHOP
-  </h2>
-
-  <p style="color:#ccc;margin:10px 0;">
-    🎮 สินค้าดิจิทัลราคาพิเศษ
-  </p>
-
-  <a
-    href="#products"
-    class="btn"
-    style="display:inline-block;text-decoration:none;"
-  >
-    🛒 ซื้อสินค้าเลย
-  </a>
-
-</div>
+เขียนถึง Tae Hub
